@@ -1,0 +1,22 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.20.122:3306/test?serverTimezone=Asia/Shanghai&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&useSSL=false
+    username: dxyt
+    password: dxyt@2020=-
+
+#mybatis:
+#  mapper-locations: classpath*:mapper/*Mapper.xml
+#  type-aliases-package: com.atguigu.springcloud.entities
+
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.atguigu.springcloud.entities
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
