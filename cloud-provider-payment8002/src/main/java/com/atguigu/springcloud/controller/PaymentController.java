@@ -2,11 +2,11 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
-import com.atguigu.springcloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import com.atguigu.springcloud.service.PaymentService;
 
 import java.util.Objects;
 
@@ -14,7 +14,6 @@ import java.util.Objects;
 /**
  * @author niulijie
  * @since 2022-03-21 16:20:30
- * @dec 服务提供者集群搭建
  */
 @Validated
 @RestController

@@ -1,10 +1,22 @@
 server:
   port: 80
 
-
+#原本不需要配置数据库，但是因为common包里引用了mybatis-plus，故添加了该配置，并没有实际用，只为启动不报错
 spring:
+  application:
+    name: cloud-oreder-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://172.16.20.122:3306/test?serverTimezone=Asia/Shanghai&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&rewriteBatchedStatements=true&useSSL=false
     username: dxyt
     password: dxyt@2020=-
+
+eureka:
+  client:
+    #表示是否将自己注册进eurekaServer 默认为true
+    register-with-eureka: true
+    #表示是否将自己注册进eurekaServer抓取已有的注册信息，默认为true.单节点无所谓，集群必须设置为true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    service-url:
+      #defaultZone: http://localhost:7001/eureka 单机版
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
